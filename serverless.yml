@@ -1,5 +1,8 @@
 service: langtago-app-api
 
+tenant: santuon
+app: langtago-app
+
 # Create an optimized package for our functions
 package:
   individually: true
