@@ -1,4 +1,4 @@
-service: langtago-app-api
+service: langtago-api
 
 tenant: santuon
 app: langtago-app
@@ -16,7 +16,7 @@ custom:
   # commands. Or fallsback to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
   # Set the table name here so we can use it while testing locally
-  tableName: ${self:custom.stage}-notes
+  tableName: tcia-langtago-${self:custom.stage}-notes
 
 provider:
   name: aws
