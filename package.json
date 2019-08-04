@@ -16,6 +16,7 @@
     "aws-sdk": "^2.494.0",
     "jest": "^24.8.0",
     "serverless-bundle": "^1.2.2",
+    "serverless-domain-manager": "^3.2.6",
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
