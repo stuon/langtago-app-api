@@ -23,7 +23,7 @@ custom:
   environment: ${file(env.yml):${self:custom.stage}, file(env.yml):default}
   customDomain:
     domainName: api.langtago.com
-    basePath: ""
+    basePath: ${self:provider.stage}
     stage: ${self:provider.stage}
     createRoute53Record: true
 
