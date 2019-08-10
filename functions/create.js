@@ -4,11 +4,15 @@ import { success, failure } from "../libs/response-lib";
 
 export async function main(event, context) {
   const data = JSON.parse(event.body);
+
+  // check data size
+
   const params = {
     TableName: process.env.tableName,
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId,
       noteId: uuid.v1(),
+      title: data.title,
       content: data.content,
       attachment: data.attachment,
       createdAt: Date.now()
