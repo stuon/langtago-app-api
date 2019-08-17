@@ -13,6 +13,7 @@ export async function main(event, context) {
       userId: event.requestContext.identity.cognitoIdentityId,
       noteId: uuid.v1(),
       title: data.title,
+      url: data.url,
       content: data.content,
       attachment: data.attachment,
       createdAt: Date.now()

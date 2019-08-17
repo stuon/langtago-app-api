@@ -15,10 +15,11 @@ export async function main(event, context) {
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
     UpdateExpression:
-      "SET title = :title, content = :content, attachment = :attachment",
+      "SET title = :title, url = :url, content = :content, attachment = :attachment",
     ExpressionAttributeValues: {
       ":attachment": data.attachment || null,
       ":title": data.title || null,
+      ":url": data.url || null,
       ":content": data.content || null
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
