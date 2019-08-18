@@ -15,13 +15,17 @@ export async function main(event, context) {
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
     UpdateExpression:
-      "SET title = :title, url = :url, content = :content, attachment = :attachment",
+      "SET title = :title, #url = :url, content = :content, attachment = :attachment",
     ExpressionAttributeValues: {
       ":attachment": data.attachment || null,
       ":title": data.title || null,
       ":url": data.url || null,
       ":content": data.content || null
     },
+    ExpressionAttributeNames: {
+      "#url": "url"
+    },
+
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
     // can inspect 'result' below to see how it works with different settings
