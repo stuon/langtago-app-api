@@ -50,3 +50,7 @@ env.yml
 
 # Jetbrains IDEs
 .idea
+
+# config
+config-prod.js
+config-dev.js

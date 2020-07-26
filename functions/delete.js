@@ -1,5 +1,6 @@
 import * as dynamoDbLib from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
+import * as loggingLib from "../libs/logging-lib";
 
 export async function main(event, context) {
   const params = {
@@ -9,9 +10,11 @@ export async function main(event, context) {
     // - 'noteId': path parameter
     Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      noteId: event.pathParameters.id
-    }
+      noteId: event.pathParameters.id,
+    },
   };
+
+  loggingLib.logAPI("Delete", event);
 
   try {
     await dynamoDbLib.call("delete", params);
